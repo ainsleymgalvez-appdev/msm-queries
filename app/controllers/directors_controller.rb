@@ -1,6 +1,9 @@
-clas DirectorsController < ApplicationController
+class DirectorsController < ApplicationController
 
-def index
+  def index
 
-  render({ :template => "directors_template/index.html.erb"})
+    @list_of_directors = Director.all
+
+    render({ :template => "director_template/index.html.erb"})
+  end
 end
